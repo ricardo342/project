@@ -2,7 +2,7 @@
 #coding=utf8
 import requests
 import os
-
+import sqlite3
 '''
 # 变量
 message = 'Hello World!'

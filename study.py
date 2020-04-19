@@ -1,5 +1,6 @@
 #!/usr/bin/python
 #coding=utf8
+import requests
 '''
 # 变量
 message = 'Hello World!'

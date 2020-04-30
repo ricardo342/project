@@ -332,4 +332,203 @@ alien_0['color'] = 'yellow'
 message_0 = "The alien is new " + alien_0['color'] + "."
 print(message_0)
 '''
+'''
+alien_0 = {'color': 'green', 'points': 5}
+alien_1 = {'color': 'yellow', 'points': 10}
+alien_2 = {'color': 'red', 'points': 15}
 
+aliens = [alien_0, alien_1, alien_2]
+for alien in aliens:
+    print(alien)
+'''
+'''
+aliens = []
+
+for alien_number in range(30):
+    new_alien = {'color': 'green', 'points': 5, 'speed': 'slow'}
+    aliens.append(new_alien)
+
+for alien in aliens[:5]:
+    print(alien)
+
+print("...")
+print("Total number of aliens: " + str(len(aliens)))
+'''
+'''
+aliens = []
+
+for alien_number in range(30):
+    new_alien = {'color': 'green', 'points': 5, 'speed': 'slow'}
+    aliens.append(new_alien)
+    new_alien1 = {'color': 'yellow', 'points': 5, 'speed': 'slow'}
+    aliens.append(new_alien1)
+    print(aliens)
+
+for alien in aliens[:3]:
+    if alien['color'] == 'green':
+        alien['color'] = 'yellow'
+        alien['points'] = 10
+        alien['speed'] = 'medium'
+    elif alien['color'] == 'yellow':
+        alien['color'] = 'red'
+        alien['points'] = 15
+        alien['speed'] = 'fast'
+
+for alien in aliens[:5]:
+    print(alien)
+'''
+'''
+pizza = {
+    'curst': 'thick',
+    'toppings': ['mushrooms', 'extra cheese'],
+    }
+
+print("You ordered a " + pizza['curst'] + "-curst pizza with the following toppings" + ":")
+for i in pizza['toppings']:
+    print("\t" + i)
+'''
+'''
+favorite_languages = {
+    'jen': ['python', 'ruby'],
+    'sarah': ['c'],
+    'edward': ['ruby', 'go'],
+    'phil': ['python', 'haskell'],
+    }
+
+for name, languages in favorite_languages.items():
+    if len(languages) > 1:
+        message = name.title() + "'s favorite languages are:"
+        print(message)
+        for language in languages:
+            print("\t" + language.title())
+    elif len(languages) == 1:
+        for language in languages:
+            message01 = name.title() + "'s favorite languages is " + language.title() + "."
+            print(message01)
+'''
+'''
+users = {
+    'aeinstein': {
+    'first': 'albert',
+    'last': 'einstein',
+    'location': 'princeton',
+    },
+    'mcurie': {
+    'first': 'marie',
+    'last': 'curie',
+    'location': 'paris',
+    },
+    }
+
+for user_name, locations in users.items():
+    message = "Username: " + user_name
+    print(message)
+    full_name = locations['first'].title() + " " + locations['last'].title()
+    message01 = "Full name: " + full_name
+    print("\t" + message01)
+    message02 = "Location: " + locations['location'].title()
+    print("\t" + message02)
+'''
+'''
+user_0 = {
+    'first_name': '马',
+    'last_name': '佳钦',
+    'age': 25,
+    'city': '深圳',
+    }
+
+user_1 = {
+    'first_name': '魏',
+    'last_name': '培婷',
+    'age': 24,
+    'city': '深圳',
+    }
+
+user_2 = {
+    'first_name': '马',
+    'last_name': '佳辉',
+    'age': 24,
+    'city': '广州',
+    }
+
+people = []
+
+people.append(user_0)
+people.append(user_1)
+people.append(user_2)
+
+print(people)
+'''
+'''
+pets = []
+
+mike = {
+    'name': 'cat',
+    'user': 'mjq',
+    }
+
+sarah = {
+    'name': 'dog',
+    'user': 'wpt',
+    }
+
+pets.append(mike)
+pets.append(sarah)
+
+for animal in pets:
+    message = animal['name'] + " is a " + animal['user']
+    print(message)
+'''
+'''
+favorite_places = {
+    'jen': ['python', 'ruby'],
+    'sarah': ['c'],
+    'edward': ['ruby', 'go'],
+    'phil': ['python', 'haskell'],
+    }
+
+for name, places in favorite_places.items():
+    if len(places) > 1:
+        message = name + " like places are:"
+        print(message)
+        for place in places:
+            message01 = "\t" + place
+            print(message01)
+    elif len(places) == 1:
+        message02 = name + " like places is " + place + "."
+        print(message02)
+'''
+'''
+magicians = ['mike', 'john', 'sarah']
+
+def make_great(names):
+    for name in names:
+        name = "the Great " + name
+        print(name)
+    return names
+
+def show_magicians(names):
+    for name in names:
+        print(name.title())
+
+show_magicians(magicians)
+message = make_great(magicians)
+'''
+'''
+def show_magicians(names):
+    for name in names:
+        print(name.title())
+
+def make_great(names, new_names):
+    while names:
+        name = names.pop()
+        name = "the Great " + name
+        new_names.append(name)
+        print(name.title())
+
+magicians = ['mike', 'john', 'sarah']
+magiciums = []
+
+show_magicians(magicians)
+make_great(magicians[:], magiciums)
+'''

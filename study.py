@@ -532,3 +532,1002 @@ magiciums = []
 show_magicians(magicians)
 make_great(magicians[:], magiciums)
 '''
+'''
+def make_pizza(*toppings):
+    message = "\nMaking a pizza with the following toppings: "
+    print(message)
+    for topping in toppings:
+        print("-" + str(topping))
+
+make_pizza('pepperoni')
+make_pizza('mushrooms', 'green peppers', 'extra cheese')
+'''
+'''
+def build_profile(first, last, **user_info):
+    profile = {}
+    profile['first_name'] = first
+    profile['last_name'] = last
+    for key, value in user_info.items():
+        profile[key] = value
+    return profile
+
+user_profile = build_profile('albert', 'einstein',
+                            location='princeton',
+                            field='physics')
+print(user_profile)
+'''
+'''
+def make_sandwichs(*foods):
+    for food in foods:
+        print(food)
+
+make_sandwichs('beef')
+make_sandwichs('beef', 'milk')
+'''
+'''
+def make_car(name, model, **cars_info):
+    car_info = {}
+    car_info['name'] = name
+    car_info['model'] = model
+    for key, value in cars_info.items():
+        car_info[key] = value
+    return car_info
+
+car = make_car('subaru', 'outback', color='blue', tow_package=True)
+print(car)
+'''
+'''
+def make_pizza(size, *toppings):
+    print("\nMaking a " + str(size) +"-inch pizza with the following toppings:")
+    for topping in toppings:
+        print("- " + topping)
+'''
+'''
+class Dog():
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    
+    def sit(self):
+        message = self.name.title() + " is now sitting."
+        print(message)
+
+    def roll_over(self):
+        message01 = self.name.title() + " is now rolled over!"
+        print(message01)
+
+my_dog = Dog('willie', 6)
+your_dog = Dog('lucy', 3)
+
+print("My dog's name is " + my_dog.name.title() + ".")
+print("My dog is " + str(my_dog.age) + " years old.")
+my_dog.sit()
+my_dog.roll_over()
+print("\nYour dog's name is " + your_dog.name.title() + ".")
+print("Your dog is " + str(your_dog.age) + " years old.")
+your_dog.sit()
+your_dog.roll_over()
+'''
+'''
+class Restaurant():
+    def __init__(self, restaurant_name, cuisine_type):
+        self.restaurant_name = restaurant_name
+        self.cuisine_type = cuisine_type
+    
+    def describe_restaurant(self):
+        print(self.restaurant_name)
+        print(self.cuisine_type)
+
+    def open_restaurant(self):
+        message01= "The " + self.restaurant_name.title() + " in operation."
+        print(message01)
+
+my_restaurant = Restaurant('erlang', '粤菜')
+your_restaurant = Restaurant('erlang', '粤菜')
+him_restaurant = Restaurant('erlang', '粤菜')
+my_restaurant.describe_restaurant()
+your_restaurant.describe_restaurant()
+him_restaurant.describe_restaurant()
+'''
+'''
+class User():
+    def __init__(self, first_name, last_name, user_info):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.user_info = user_info
+
+    def describe_user(self):
+        print(self.user_info)
+
+    def greet_user(self):
+        message = "Hello " + self.first_name.title() + " " + self.last_name + ", nice to meet you!"
+        print(message)
+
+mike_user = User('ricardo', '.M', 16)
+john_user = User('ricardo', '.M', 15)
+sarah_user = User('ricardo', '.M', 14)
+mike_user.describe_user()
+mike_user.greet_user()
+john_user.describe_user()
+john_user.greet_user()
+sarah_user.describe_user()
+sarah_user.greet_user()
+'''
+'''
+class Car():
+    def __init__(self, make, model, year):
+        self.make = make
+        self.model = model
+        self.year = year
+        self.odometer_reading = 0
+    
+    def get_descriptive_name(self):
+        long_name = str(self.year) + " " + self.make + " " + self.model
+        return long_name.title()
+
+    def read_odometer(self):
+        message = "This car has " + str(self.odometer_reading) + " miles on it."
+        print(message)
+
+    def update_odometer(self, mileage):
+        if mileage >= self.odometer_reading:
+            self.odometer_reading = mileage
+        else:
+            print("You can't roll back an odometer!")
+    
+    def add_odometer(self, addmile):
+        if addmile >= 0:
+            self.odometer_reading += addmile
+        else:
+            print("You can't roll back an odometer!")
+
+my_new_car = Car('audi', 'a4', 2016)
+# my_new_car.get_descriptive_name()
+message = my_new_car.get_descriptive_name()
+print(message)
+# my_new_car.odometer_reading = 23
+my_new_car.update_odometer(20)
+my_new_car.read_odometer()
+my_new_car.update_odometer(21)
+my_new_car.read_odometer()
+my_new_car.add_odometer(2)
+my_new_car.read_odometer()
+'''
+'''
+class Restaurant():
+    def __init__(self, restaurant_name, cuisine_type):
+        self.restaurant_name = restaurant_name
+        self.cuisine_type = cuisine_type
+        self.number_served = 0
+    
+    def describe_restaurant(self):
+        print(self.restaurant_name)
+        print(self.cuisine_type)
+
+    def open_restaurant(self):
+        message01= "The " + self.restaurant_name.title() + " in operation."
+        print(message01)
+    
+    def read_restaurant(self):
+        message = "Have " + str(restaurant.number_served) + " people eat."
+        print(message)
+    
+    def set_number_served(self, number):
+        self.number_served = number
+
+    def increment_number_served(self, num):
+        if num >= 0:
+            self.number_served += num
+        else:
+            print("No!")
+
+restaurant = Restaurant('erlang', '粤菜')
+# restaurant.number_served = 3
+# message = "Have " + str(restaurant.number_served) + " people eat."
+# print(message)
+restaurant.set_number_served(3)
+restaurant.read_restaurant()
+restaurant.increment_number_served(-1)
+restaurant.read_restaurant()
+'''
+'''
+class User():
+    def __init__(self, first_name, last_name, user_info, login_attempts):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.user_info = user_info
+        self.login_attempts = login_attempts
+
+    def describe_user(self):
+        print(self.user_info)
+
+    def greet_user(self):
+        message = "Hello " + self.first_name.title() + " " + self.last_name + ", nice to meet you!"
+        print(message)
+
+    def increment_login_attempts(self):
+        self.login_attempts += 1
+
+    def reset_login_attempts(self):
+        self.login_attempts = 0
+
+    def read_login_attempts(self):
+        print(self.login_attempts)
+
+user = User('ricardo', '.m', 16, 0)
+user.increment_login_attempts()
+user.increment_login_attempts()
+user.increment_login_attempts()
+user.reset_login_attempts()
+user.read_login_attempts()
+'''
+'''
+class Car():
+    def __init__(self, make, model, year):
+        self.make = make
+        self.model = model
+        self.year = year
+        self.odometer_reading = 0
+    
+    def get_descriptive_name(self):
+        long_name = str(self.year) + " " + self.make + " " + self.model
+        return long_name.title()
+
+    def read_odometer(self):
+        message = "This car has " + str(self.odometer_reading) + " miles on it."
+        print(message)
+
+    def update_odometer(self, mileage):
+        if mileage >= self.odometer_reading:
+            self.odometer_reading = mileage
+        else:
+            print("You can't roll back an odometer!")
+    
+    def add_odometer(self, addmile):
+        if addmile >= 0:
+            self.odometer_reading += addmile
+        else:
+            print("You can't roll back an odometer!")
+
+class ElectricCar(Car):
+    def __init__(self, make, model, year):
+        super().__init__(make, model, year)
+        # 初始化父类属性
+        self.battery_size = 70
+    
+    def describe_battery(self):
+        message = "This car has a " + str(self.battery_size) + "-kWh battery."
+        print(message)
+    
+    def read_odometer(self):
+        print("This car doesn't need a gas tank!")
+
+my_tesla = ElectricCar('tesla', 'model s', 2016)
+print(my_tesla.get_descriptive_name())
+my_tesla.describe_battery()
+my_tesla.read_odometer()
+'''
+'''
+class Car():
+    def __init__(self, make, model, year):
+        self.make = make
+        self.model = model
+        self.year = year
+        self.odometer_reading = 0
+    
+    def get_descriptive_name(self):
+        long_name = str(self.year) + " " + self.make + " " + self.model
+        return long_name.title()
+
+    def read_odometer(self):
+        message = "This car has " + str(self.odometer_reading) + " miles on it."
+        print(message)
+
+    def update_odometer(self, mileage):
+        if mileage >= self.odometer_reading:
+            self.odometer_reading = mileage
+        else:
+            print("You can't roll back an odometer!")
+    
+    def add_odometer(self, addmile):
+        if addmile >= 0:
+            self.odometer_reading += addmile
+        else:
+            print("You can't roll back an odometer!")
+
+class Battery():
+    def __init__(self,battery_size=70):
+        self.battery_size = battery_size
+    
+    def describe_battery(self):
+        message = "This car has a " + str(self.battery_size) + "-kWh battery."
+        print(message)
+
+class ElectricCar(Car):
+    def __init__(self, make, model, year):
+        super().__init__(make, model, year)
+        self.battery = Battery()
+
+my_tesla = ElectricCar('tesla', 'model s', 2016)
+print(my_tesla.get_descriptive_name())
+my_tesla.battery.describe_battery()
+'''
+'''
+class Restaurant():
+    def __init__(self, restaurant_name, cuisine_type):
+        self.restaurant_name = restaurant_name
+        self.cuisine_type = cuisine_type
+        self.number_served = 0
+    
+    def describe_restaurant(self):
+        print(self.restaurant_name)
+        print(self.cuisine_type)
+
+    def open_restaurant(self):
+        message01= "The " + self.restaurant_name.title() + " in operation."
+        print(message01)
+    
+    def read_restaurant(self):
+        message = "Have " + str(self.number_served) + " people eat."
+        print(message)
+    
+    def set_number_served(self, number):
+        self.number_served = number
+
+    def increment_number_served(self, num):
+        if num >= 0:
+            self.number_served += num
+        else:
+            print("No!")
+
+class IceCreamStand(Restaurant):
+    def __init__(self, restaurant_name, cuisine_type):
+        super().__init__(restaurant_name, cuisine_type)
+        self.flavors = []
+    
+    def ice_cream(self, flavor):
+        self.flavors.append(flavor)
+        print(self.flavors)
+
+ice = IceCreamStand('erlang', '粤菜')
+ice.ice_cream('one')
+ice.ice_cream('two')
+ice.ice_cream('three')
+'''
+'''
+class User():
+    def __init__(self, first_name, last_name, user_info, login_attempts):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.user_info = user_info
+        self.login_attempts = login_attempts
+
+    def describe_user(self):
+        print(self.user_info)
+
+    def greet_user(self):
+        message = "Hello " + self.first_name.title() + " " + self.last_name + ", nice to meet you!"
+        print(message)
+
+    def increment_login_attempts(self):
+        self.login_attempts += 1
+
+    def reset_login_attempts(self):
+        self.login_attempts = 0
+
+    def read_login_attempts(self):
+        print(self.login_attempts)
+'''
+'''
+class Admin(User):
+    def __init__(self, first_name, last_name, user_info, login_attempts):
+        super().__init__(first_name, last_name, user_info, login_attempts)
+        self.privileges = ["can add post", "can delete post", "can ban user"]
+    
+    def show_privileges(self):
+        message = "Administrator permissions are as follows"
+        message01 = "--------------\n"
+        print(message)
+        print(message01)
+        for privilege in self.privileges:
+            print(privilege)
+
+user = Admin('ricardo', '.m', 16, 0)
+user.show_privileges()
+'''
+'''
+class User():
+    def __init__(self, first_name, last_name, user_info, login_attempts):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.user_info = user_info
+        self.login_attempts = login_attempts
+
+    def describe_user(self):
+        print(self.user_info)
+
+    def greet_user(self):
+        message = "Hello " + self.first_name.title() + " " + self.last_name + ", nice to meet you!"
+        print(message)
+
+    def increment_login_attempts(self):
+        self.login_attempts += 1
+
+    def reset_login_attempts(self):
+        self.login_attempts = 0
+
+    def read_login_attempts(self):
+        print(self.login_attempts)
+
+
+class Privileges():
+    def __init__(self):
+        self.privileges = ["can add post", "can delete post", "can ban user"]
+
+    def show_privileges(self):
+        message = "Administrator permissions are as follows"
+        message01 = "--------------\n"
+        print(message)
+        print(message01)
+        for privilege in self.privileges:
+            print(privilege)
+
+class Admin(User):
+    def __init__(self, first_name, last_name, user_info, login_attempts):
+        super().__init__(first_name, last_name, user_info, login_attempts)
+        self.privileges = Privileges()
+    
+    def show_privileges(self):
+        message = "Administrator permissions are as follows"
+        message01 = "--------------\n"
+        print(message)
+        print(message01)
+        for privilege in self.privileges:
+            print(privilege)
+
+user = Admin('ricardo', '.m', 16, 0)
+user.privileges.show_privileges()
+'''
+'''
+class Car():
+    def __init__(self, make, model, year):
+        self.make = make
+        self.model = model
+        self.year = year
+        self.odometer_reading = 0
+    
+    def get_descriptive_name(self):
+        long_name = str(self.year) + " " + self.make + " " + self.model
+        return long_name.title()
+
+    def read_odometer(self):
+        message = "This car has " + str(self.odometer_reading) + " miles on it."
+        print(message)
+
+    def update_odometer(self, mileage):
+        if mileage >= self.odometer_reading:
+            self.odometer_reading = mileage
+        else:
+            print("You can't roll back an odometer!")
+    
+    def add_odometer(self, addmile):
+        if addmile >= 0:
+            self.odometer_reading += addmile
+        else:
+            print("You can't roll back an odometer!")
+
+class Battery():
+    def __init__(self,battery_size=70):
+        self.battery_size = battery_size
+    
+    def describe_battery(self):
+        message = "This car has a " + str(self.battery_size) + "-kWh battery."
+        print(message)
+    
+    def get_range(self):
+        if self.battery_size == 70:
+            range = 240
+        elif self.battery_size == 85:
+            range = 270
+        
+        message = "This car can go approximately " + str(range)
+        message += " miles on a full charge."
+        print(message)
+    
+    def upgrade_battery(self, size):
+        if size != 85:
+            self.battery_size = 85
+        else:
+            self.battery_size = 85
+
+class ElectricCar(Car):
+    def __init__(self, make, model, year):
+        super().__init__(make, model, year)
+        # 初始化父类属性
+        self.battery_size = 70
+    
+    def describe_battery(self):
+        message = "This car has a " + str(self.battery_size) + "-kWh battery."
+        print(message)
+    
+    def read_odometer(self):
+        print("This car doesn't need a gas tank!")
+
+battery = Battery()
+battery.upgrade_battery(85)
+battery.get_range()
+'''
+'''
+from root import User
+class Privileges():
+    def __init__(self):
+        self.privileges = ["can add post", "can delete post", "can ban user"]
+
+    def show_privileges(self):
+        message = "Administrator permissions are as follows"
+        message01 = "--------------\n"
+        print(message)
+        print(message01)
+        for privilege in self.privileges:
+            print(privilege)
+
+class Admin(User):
+    def __init__(self, first_name, last_name, user_info, login_attempts):
+        super().__init__(first_name, last_name, user_info, login_attempts)
+        self.privileges = Privileges()
+    
+    def show_privileges(self):
+        message = "Administrator permissions are as follows"
+        message01 = "--------------\n"
+        print(message)
+        print(message01)
+        for privilege in self.privileges:
+            print(privilege)
+'''
+'''
+from collections import OrderedDict
+
+favorite_languages = OrderedDict()
+
+favorite_languages['jen'] = 'python'
+favorite_languages['sarah'] = 'c'
+favorite_languages['edward'] = 'ruby'
+favorite_languages['phil'] = 'python'
+
+for name, language in favorite_languages.items():
+    message = name.title() + "'s favorite language is " + language.title() + "."
+    print(message)
+'''
+'''
+from random import randint
+
+class Die():
+    def __init__(self):
+        self.sides = 6
+
+    def roll_die(self, sides):
+        self.sides = sides
+        i = 0
+        while i <= self.sides:
+            i += 1
+            x = randint(1,self.sides)
+            print(x)
+
+die = Die()
+die.roll_die(20)
+'''
+'''
+filename = 'alice.txt'
+try:
+    with open(filename) as f:
+        contents = f.read()
+except FileNotFoundError:
+    msg = "Sorry, the file " + filename + " does not exist."
+    print(msg)
+else:
+    words = contents.split()
+    num_words = len(words)
+    print("The file " + filename + " has about " + str(num_words) + " words.")
+'''
+'''
+def count_words(filename):
+    try:
+        with open(filename) as f:
+            contents = f.read()
+    except FileNotFoundError:
+        msg = "Sorry, the file " + filename + " does not exist."
+        print(msg)
+    else:
+        words = contents.split()
+        num_words = len(words)
+        message = "The file " + filename + " has about " + str(num_words) + " words."
+        print(message)
+
+# filename = 'alice.txt'
+# count_words('alice.txt')
+filenames = ['alice.txt', 'siddhartha.txt', 'moby_dick.txt', 'little_women.txt']
+for filename in filenames:
+    count_words(filename)
+'''
+'''
+try:
+    num1 = int(input("Please input number: "))    
+    num2 = int(input("Please input number: "))
+except ValueError:
+    print("num not int")
+else:
+    number = num1 + num2
+    print(str(number))
+'''
+'''
+active = True
+
+while active:
+    try:
+        num1 = int(input("Please input number: "))    
+        num2 = int(input("Please input number: "))
+    except ValueError:
+        print("num not int")
+        active = True
+    else:
+        number = num1 + num2
+        active = False
+        print(str(number))
+'''
+'''
+cats = 'cats.txt'
+dogs = 'dogs.txt'
+
+try:
+    with open(cats) as c:
+        contents_cats = c.read()
+except FileNotFoundError:
+    print("cats.txt not exist.")
+else:
+    print(contents_cats)
+    
+try:
+    with open(dogs) as d:
+        contents_dogs = d.read()
+except FileNotFoundError:
+    print("dogs.txt not exist.")
+else:
+    print(contents_dogs)
+'''
+'''
+def file_exist(filename):
+    try:
+        with open(filename) as f:
+            contents = f.read()
+    except FileNotFoundError:
+        print("The file is not exist.")
+    else:
+        print(contents)
+
+filename = 'cats.txt'
+file_exist(filename)
+'''
+'''
+cats = 'cats.txt'
+dogs = 'dogs.txt'
+
+try:
+    with open(cats) as c:
+        contents_cats = c.read()
+except FileNotFoundError:
+    pass
+else:
+    print(contents_cats)
+    
+try:
+    with open(dogs) as d:
+        contents_dogs = d.read()
+except FileNotFoundError:
+    pass
+else:
+    print(contents_dogs)
+'''
+'''
+filename= 'cat.txt'
+
+with open(filename) as f:
+    contents = f.read()
+
+lines = contents.split()
+number = lines.count('cat')
+number1 = lines.lower().count('cat')
+'''
+'''
+import json
+
+numbers = [2, 3, 5, 7, 11, 13]
+
+filename = 'numbers.json'
+
+with open(filename, 'w') as f:
+    json.dump(numbers, f)
+
+with open(filename) as f:
+    numbers = json.load(f)
+print(numbers)
+'''
+'''
+import json
+
+username = input("What is your name? ")
+
+filename = "name.json"
+
+try:
+    with open(filename) as f:
+        name = json.load(f)
+except FileNotFoundError:
+    with open(filename, 'w') as f:
+        json.dump(username, f)
+        message = "We'll remember you when you come back, " + username + "!"
+        print(message)
+else:
+    message01 = "Welcome back, " + name + "!"
+    print(message01)
+'''
+'''
+import json
+
+def get_stored_username():
+    filename = "name.json"
+
+    try:
+        with open(filename) as f:
+            username = json.load(f)
+    except FileNotFoundError:
+        return None
+    else:
+        retuen username
+
+def greet_user(filename):
+    username = get_stored_username()
+
+    if username:
+        message01 = "Welcome back, " + name + "!"
+        print(message01)
+    else:
+        username = input("What is your name? ")
+
+        with open(filename, 'w') as f:
+            json.dump(username, f)
+            message = "We'll remember you when you come back, " + username + "!"
+            print(message)
+'''
+'''
+import json
+
+def get_number():
+    filename = 'num.json'
+    try:
+        with open(filename) as i:
+            number = json.load(i)
+    except FileNotFoundError:
+        return None
+    else:
+        return number
+
+def number():
+    number = get_number()
+    if number:
+        message = "I know your favorite number! It's " + number + "."
+        print(message)
+    else:
+        with open(filename, 'w') as f:
+        json.dump(num, f)
+    
+        with open(filename) as i:
+            number = json.load(i)
+            message = "I know your favorite number! It's " + number + "."
+            print(message)
+'''
+'''
+import json
+
+def get_stored_username():
+    filename = "name.json"
+
+    try:
+        with open(filename) as f:
+            username = json.load(f)
+    except FileNotFoundError:
+        return None
+    else:
+        return username
+
+def get_new_username():
+    username = input("What is your name? ")
+    return username
+
+def greet_user(filename):
+    username = get_stored_username()
+
+    active = True
+    
+    while active:
+        if username:
+            message01 = "Welcome back, " + username + "!"
+            print(message01)
+        else:
+            msg = input("This number is right?(yes or no) ")
+            if msg == 'yes':
+                username = input("What is your name? ")
+
+                with open(filename, 'w') as f:
+                    json.dump(username, f)
+                    message = "We'll remember you when you come back, " + username + "!"
+                    print(message)
+                active = False
+            else:
+                username = get_new_username()
+                with open(filename, 'w') as f:
+                    json.dump(username, f)
+                    message = "We'll remember you when you come back, " + username + "!"
+                    print(message)
+'''
+'''
+def get_formatted_name(first_name, last_name):
+    full_name = first_name + " " + last_name
+    return full_name.title()
+
+from name_function import get_formatted_name
+
+print("Enter 'q' at any time to quit.")
+while True:
+    first_name = input("Please give me a first name: ")
+    if first_name == 'q':
+        break
+    last_name = input("Please give me a last name: ")
+    if last_name == 'q':
+        break
+
+    formatted_name = get_formatted_name(first_name, last_name)
+    msg = "\tNeatly formatted name: " + formatted_name + '.'
+    print(msg)
+'''
+'''
+import unittest
+from name_function import get_formatted_name
+
+class NameTestCase(unittest.TestCase):
+
+    def test_first_last_name(self):
+        formatted_name = get_formatted_name('janis', 'joplin')
+        self.assertEqual(formatted_name, 'Janis joplin')
+
+unittest.main()
+
+def get_formatted_name(first_name, last_name, middle_name=''):
+    if middle_name:
+        full_name = first_name + " "+ middle_name + "" + last_name
+    else:
+        full_name = first_name + " " + last_name
+    return full_name.title()
+'''
+'''
+import unittest
+from name_function import get_formatted_name
+
+class NameTestCase(unittest.TestCase):
+
+    def test_first_last_name(self):
+        formatted_name = get_formatted_name('janis', 'joplin')
+        self.assertEqual(formatted_name, 'Janis joplin')
+    
+    def test_first_middle_last_name(self):
+        formatted_name = get_formatted_name('wolfgang', 'mozart', 'amadeus')
+        self.assertEqual(formatted_name, 'Wolfgang Amadeus Mozart')
+
+unittest.main()
+'''
+'''
+import unittest
+
+from city_functions import city_function
+
+class CityCountryTestCase(unittest.TestCase):
+
+    def test_city_country(self):
+        #test_c_c = city_function('santiago', 'chile', '50000')
+        #self.assertEqual(test_c_c, 'Santiago, Chile - population 50000')
+        test_c_c = city_function('santiago', 'chile')
+        self.assertEqual(test_c_c, 'Santiago, Chile')
+    
+    def test_city_country_population(self):
+        test_c_c_p = city_function('santiago', 'chile', population='50000')
+        self.assertEqual(test_c_c_p, 'Santiago, Chile - population 50000')
+
+unittest.main()
+'''
+'''
+from city_functions import AnonymousSurvey
+
+question = "What language did you first learn to speak?"
+my_survey = AnonymousSurvey(question)
+
+my_survey.show_question()
+print("Enter 'q' at any time to quit.\n")
+while True:
+    responses = input("Language: ")
+    if responses == 'q':
+        break
+    my_survey.store_response(responses)
+
+message = "\nThank you to everyone who participated in the survey!"
+print(message)
+my_survey.show_results()
+'''
+'''
+import unittest
+
+from city_functions import AnonymousSurvey
+
+class TestAnonymousSurvey(unittest.TestCase):
+    def test_store_single_response(self):
+        question = "What language did you first learn to speak?"
+        my_survey = AnonymousSurvey(question)
+        my_survey.store_response('English')
+
+        self.assertIn('English', my_survey.responses)
+
+    def test_store_three_responses(self):
+        question = "What language did you first learn to speak?"
+        my_survey =AnonymousSurvey(question)
+        responses = ['English', 'Spanish', 'Mandarin']
+
+        for response in responses:
+            my_survey.store_response(response)
+
+        for response in responses:
+            self.assertIn(response, my_survey.responses)
+
+unittest.main()
+'''
+'''
+import unittest
+
+from city_functions import AnonymousSurvey
+
+class TestAnonymousSurvey(unittest.TestCase):
+    def setUp(self):
+        question = "What language did you first learn to speak?"
+        self.my_survey = AnonymousSurvey(question)
+        self.responses = ['English', 'Spanish', 'Mandarin']
+    
+    def test_store_single_response(self):
+        self.my_survey.store_response(self.responses[0])
+        self.assertIn(self.responses[0], self.my_survey.responses)
+    
+    def test_store_three_responses(self):
+        for response in self.responses:
+            self.my_survey.store_response(response)
+        
+        for response in self.responses:
+            self.assertIn(response, self.my_survey.responses)
+
+unittest.main()
+'''
+'''
+import unittest
+
+from city_functions import Employee
+
+class TestEmployee(unittest.TestCase):
+    def setUp(self):
+        self.my_employee = Employee('ma', 'jiaqin', 5000)
+
+    def test_give_default_raise(self):
+        self.my_employee.give_raise()
+        self.assertEqual(self.my_employee.year_money, 10000)
+        
+    def test_give_custom_raise(self):
+        self.my_employee.give_raise(10000)
+        self.assertEqual(self.my_employee.year_money, 15000)
+        
+
+unittest.main()
+'''

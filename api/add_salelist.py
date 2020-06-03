@@ -18,15 +18,15 @@ from email.header import Header
 
 class url():
     def __init__(self):
-        self.website = '/service/album/album_theme_operation.jsp?act=save_theme'
+        self.website = 'xxx'
     
     def type_realm(self, type):
         if type == '测试':
-            self.realm = 'https://www.wegoab.com'
+            self.realm = 'https://www.xxx.com'
         elif type == '预发布':
-            self.realm = 'https://www.micbosscloud.com'
+            self.realm = 'https://www.zzz.com'
         elif type == '生产':
-            self.realm = 'https://www.szwego.com'
+            self.realm = 'https://www.xxx.com'
         wegourl = self.realm + self.website
         return wegourl
 

@@ -17,7 +17,7 @@ from time import sleep
 from commonApp import DeleteFile
 
 
-accepter_list = ['yaoxs@galanz.com','majq@galanz.com', 'zengyl001@galanz.com','wangl010@galanz.com','chenyz002@galanz.com','liuj014@galanz.com','liuh006@galanz.com','liuh006@galanz.com','maom@galanz.com','wuzg@galanz.com','xiongyc@galanz.com',"chenzy003@galanz.com","lvx@galanz.com","wangkz@galanz.com","wujm002@galanz.com","caijh001@galanz.com","pengwl@galanz.com"]
+accepter_list = ['XXX@galanz.com','XXX@galanz.com']
 
 
 def send_mail():
@@ -26,20 +26,20 @@ def send_mail():
     mail_port = 25  # SMTP端口号
     #mail_accepter = 'yaoxs@galanz.com'
     mail_accepter = accepter_list
-    accepter = '彭炜凌,陈永周,刘君,刘海,王磊,毛敏,吴志关,熊有才,陈振宇,吕欣,汪坤柱,吴建明,蔡剑晖,姚雪松,马佳钦,曾颖玲'  # 接收者简称
-    mail_sender = 'yaoxs@galanz.com'  # 发送邮箱
+    accepter = 'XXX'  # 接收者简称
+    mail_sender = 'XXX@galanz.com'  # 发送邮箱
     mail_password = 'yXS940113'  # 邮箱密码
 
     with open(files, 'r',encoding="utf-8") as file:
         mail_body = file.read()
-        sender = 'yaoxs@galanz.com'
+        sender = 'XXX@galanz.com'
         text = MIMEText(mail_body, 'html', 'utf-8')
         """创建一个带附件的实例"""
         message = MIMEMultipart('mixed')
         message.attach(text)
 
     today = str(datetime.date.today())
-    name = '小B直供遗留BUG <每日提醒' + '_' + today + '>'
+    name = 'XXX遗留BUG <每日提醒' + '_' + today + '>'
     message['Subject'] = name
     message['From'] = sender
     message['To'] = "".join(accepter)
@@ -96,8 +96,8 @@ ActionChains(driver).key_down(Keys.ENTER).perform()
 sleep(6)
 driver.close()
 
-# send_mail("C:\\Users\\Administrator\\Downloads\\小B直供系统-未解决Bug.html")
-# file = "C:\\Users\\Administrator\\Downloads\\小B直供系统-未解决Bug.html"
+# send_mail("C:\\Users\\Administrator\\Downloads\\XXX系统-未解决Bug.html")
+# file = "C:\\Users\\Administrator\\Downloads\\XXX系统-未解决Bug.html"
 
 # 定时器
 now_time = datetime.datetime.now()

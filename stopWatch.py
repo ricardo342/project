@@ -21,7 +21,7 @@ accepter_list = ['XXX@galanz.com','XXX@galanz.com']
 
 
 def send_mail():
-    files = "C:\\Users\\Administrator\\Downloads\\小B直供系统-未解决Bug.html"
+    files = "C:\\Users\\Administrator\\Downloads\\XXX系统-未解决Bug.html"
     mail_host = 'mail.galanz.com'  # 设置服务器
     mail_port = 25  # SMTP端口号
     #mail_accepter = 'yaoxs@galanz.com'

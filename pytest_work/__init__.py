@@ -4,5 +4,5 @@
 @File: __init__.py
 @time:2022/6/13
 @Author:majiaqin 170479
-@Desc:pytest学习项目
+@Desc:pytest的学习项目
 '''
